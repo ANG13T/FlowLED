@@ -37,14 +37,21 @@ void loop() {
 
   if(addButtonVal == HIGH){
     Serial.println("Add Button Pushed");
+    if(potVal + 45 <= 180){
+      potVal += 45;
+    }
     delay(100);
   }
   if(subButtonVal == HIGH){
     Serial.println("Subtract Button Pushed");
+    if(potVal - 45 >= 0){
+      potVal -= 45;
+    }
     delay(100);
   }
   if(resetButtonVal == HIGH){
     Serial.println("Reset Button Pushed");
+    potVal = 0;
     delay(100);
   }
 
